@@ -9,7 +9,7 @@ exports.handler = async () => {
     if (todayEvents.length === 0) return 200;
 
     const eventMessage = generateMessageOfEvents(todayEvents);
-    await api.channels.createMessage(process.env.REMIND_CHANNEL_ID, { content: `本日の予定\n${eventMessage}`});
+    await api.channels.createMessage(process.env.REMIND_CHANNEL_ID, { content: `@everyone \n本日の予定\n${eventMessage}`});
     return 200;
 }
 
